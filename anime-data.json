@@ -8,90 +8,130 @@
       "title": "PSYREN -사이렌-",
       "titleJapanese": "PSYREN -サイレン-",
       "day": "monday",
-      "time": "23:00",
-      "broadcast": "TOKYO MX",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["액션", "SF", "미스터리"],
+      "synopsis": "수수께끼의 세계와 초능력을 둘러싼 생존과 모험을 그린 작품.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "mahou-shoujo-ikusei-keikaku-restart",
       "title": "마법소녀 육성계획 restart",
       "titleJapanese": "魔法少女育成計画restart",
       "day": "monday",
-      "time": "26:00",
-      "broadcast": "TV Tokyo",
-      "status": "airing"
-    },
-    {
-      "id": "choujun-choujou-senpai",
-      "title": "초순! 초조 선배",
-      "titleJapanese": "超巡！超条先輩",
-      "day": "tuesday",
-      "time": "23:00",
-      "broadcast": "Fuji TV 계열",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["판타지", "액션"],
+      "synopsis": "마법소녀들이 위험한 사건과 새로운 시련에 맞서는 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "tantei-wa-mou-shindeiru-season-2",
-      "title": "탐정은 이미 죽었다 Season 2",
+      "title": "탐정은 이미 죽었다 2기",
       "titleJapanese": "探偵はもう、死んでいる。Season2",
       "day": "wednesday",
-      "time": "22:30",
-      "broadcast": "TOKYO MX",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["미스터리", "드라마", "액션"],
+      "synopsis": "명탐정 시에스타와 관련된 사건과 비밀을 둘러싼 새로운 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "magic-knight-rayearth-2026",
       "title": "마법기사 레이어스",
       "titleJapanese": "魔法騎士レイアース",
       "day": "wednesday",
-      "time": "23:45",
-      "broadcast": "TV Asahi 계열",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["판타지", "모험", "액션"],
+      "synopsis": "이세계 세피로에 소환된 소녀들이 마법기사로서 모험하는 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "tensei-shitara-ken-deshita-season-2",
       "title": "전생했더니 검이었습니다 2기",
-      "titleJapanese": "転生したら剣でした 第2期",
+      "titleJapanese": "転生したら剣でしたII",
       "day": "wednesday",
-      "time": "24:00",
-      "broadcast": "TOKYO MX",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["판타지", "모험", "액션"],
+      "synopsis": "지성을 가진 마검과 검을 사용하는 소녀 프란의 새로운 모험.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "koori-no-jouheki-season-2",
       "title": "얼음의 성벽 2기",
       "titleJapanese": "氷の城壁 第2期",
       "day": "thursday",
-      "time": "23:56",
-      "broadcast": "TBS 계열",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["청춘", "드라마", "로맨스"],
+      "synopsis": "서툰 인간관계와 마음의 거리를 그리는 청춘 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "pan-dorobou",
       "title": "빵도둑",
       "titleJapanese": "パンどろぼう",
       "day": "friday",
-      "time": "18:40",
-      "broadcast": "NHK E테레",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["코미디", "일상"],
+      "synopsis": "빵을 좋아하는 독특한 빵도둑의 유쾌한 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "kusuriya-no-hitorigoto-season-3",
       "title": "약사의 혼잣말 3기",
       "titleJapanese": "薬屋のひとりごと 第3期",
       "day": "friday",
-      "time": "23:00",
-      "broadcast": "일본TV 계열",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["미스터리", "드라마"],
+      "synopsis": "약학 지식과 뛰어난 관찰력을 가진 마오마오가 궁중의 사건을 풀어가는 이야기.",
+      "image": "",
+      "url": ""
     },
     {
       "id": "black-clover-season-2",
-      "title": "블랙 클로버 2nd Season",
+      "title": "블랙 클로버 2기",
       "titleJapanese": "ブラッククローバー 2nd Season",
       "day": "saturday",
-      "time": "23:00",
-      "broadcast": "TV Tokyo",
-      "status": "airing"
+      "time": null,
+      "status": "airing",
+      "year": 2026,
+      "genres": ["액션", "판타지", "모험"],
+      "synopsis": "마법제가 되기를 꿈꾸는 아스타와 동료들의 새로운 도전.",
+      "image": "",
+      "url": ""
+    },
+    {
+      "id": "ao-no-hako-season-2",
+      "title": "푸른 상자 2기",
+      "titleJapanese": "アオのハコ Season2",
+      "day": "sunday",
+      "time": "16:30",
+      "status": "airing",
+      "year": 2026,
+      "genres": ["스포츠", "로맨스", "청춘"],
+      "synopsis": "배드민턴과 농구에 열정을 쏟는 고등학생들의 꿈과 사랑을 그린 청춘 이야기.",
+      "image": "",
+      "url": ""
     }
   ]
 }
