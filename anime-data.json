@@ -1,6 +1,97 @@
 
 {
-  "updatedAt": null,
+  "updatedAt": "2026-11-05",
   "timezone": "Asia/Tokyo",
-  "anime": []
+  "anime": [
+    {
+      "id": "psyren-2026",
+      "title": "PSYREN -사이렌-",
+      "titleJapanese": "PSYREN -サイレン-",
+      "day": "monday",
+      "time": "23:00",
+      "broadcast": "TOKYO MX",
+      "status": "airing"
+    },
+    {
+      "id": "mahou-shoujo-ikusei-keikaku-restart",
+      "title": "마법소녀 육성계획 restart",
+      "titleJapanese": "魔法少女育成計画restart",
+      "day": "monday",
+      "time": "26:00",
+      "broadcast": "TV Tokyo",
+      "status": "airing"
+    },
+    {
+      "id": "choujun-choujou-senpai",
+      "title": "초순! 초조 선배",
+      "titleJapanese": "超巡！超条先輩",
+      "day": "tuesday",
+      "time": "23:00",
+      "broadcast": "Fuji TV 계열",
+      "status": "airing"
+    },
+    {
+      "id": "tantei-wa-mou-shindeiru-season-2",
+      "title": "탐정은 이미 죽었다 Season 2",
+      "titleJapanese": "探偵はもう、死んでいる。Season2",
+      "day": "wednesday",
+      "time": "22:30",
+      "broadcast": "TOKYO MX",
+      "status": "airing"
+    },
+    {
+      "id": "magic-knight-rayearth-2026",
+      "title": "마법기사 레이어스",
+      "titleJapanese": "魔法騎士レイアース",
+      "day": "wednesday",
+      "time": "23:45",
+      "broadcast": "TV Asahi 계열",
+      "status": "airing"
+    },
+    {
+      "id": "tensei-shitara-ken-deshita-season-2",
+      "title": "전생했더니 검이었습니다 2기",
+      "titleJapanese": "転生したら剣でした 第2期",
+      "day": "wednesday",
+      "time": "24:00",
+      "broadcast": "TOKYO MX",
+      "status": "airing"
+    },
+    {
+      "id": "koori-no-jouheki-season-2",
+      "title": "얼음의 성벽 2기",
+      "titleJapanese": "氷の城壁 第2期",
+      "day": "thursday",
+      "time": null,
+      "broadcast": "TBS 계열",
+      "status": "airing"
+    },
+    {
+      "id": "pan-dorobou",
+      "title": "빵도둑",
+      "titleJapanese": "パンどろぼう",
+      "day": "friday",
+      "time": "18:40",
+      "broadcast": "NHK E테레",
+      "status": "airing"
+    },
+    {
+      "id": "kusuriya-no-hitorigoto-season-3",
+      "title": "약사의 혼잣말 3기",
+      "titleJapanese": "薬屋のひとりごと 第3期",
+      "day": "friday",
+      "time": "23:00",
+      "broadcast": "일본TV 계열",
+      "status": "airing"
+    },
+    {
+      "id": "black-clover-season-2",
+      "title": "블랙 클로버 2nd Season",
+      "titleJapanese": "ブラッククローバー 2nd Season",
+      "day": "saturday",
+      "time": "23:00",
+      "broadcast": "TV Tokyo",
+      "status": "airing"
+    }
+  ]
 }
