@@ -154,8 +154,8 @@ async function request(query, variables) {
   return data.data;
 }
 
-export async function onRequest({ request }) {
-  const url = new URL(request.url);
+export async function onRequest({ request: incomingRequest }) {
+  const url = new URL(incomingRequest.url);
   const path = url.pathname.replace(/^\/api\/?/, '');
 
   const page = Math.min(
