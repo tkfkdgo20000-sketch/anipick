@@ -21,7 +21,7 @@ const $=q=>document.querySelector(q);
 let view='all',day='전체',onlyFav=false,items=[],page=1,hasMore=false,requestSerial=0,loadedSource='';
 let fav;try{fav=new Set(JSON.parse(localStorage.getItem('anipick-favorites')||'[]').map(String))}catch{fav=new Set()}
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const safeUrl=u=>{try{let x=new URL(u);return ['https:','http:'].includes(x.protocol)?x.href:''}catch{return ''}};
+const safeUrl=u=>{try{let x=new URL(u,window.location.origin);return ['https:','http:'].includes(x.protocol)?x.href:''}catch{return ''}};
 function saveFav(){try{localStorage.setItem('anipick-favorites',JSON.stringify([...fav]))}catch{}}
 function cacheGet(k){try{const x=JSON.parse(localStorage.getItem('anipick-cache-'+k)||'null');if(x&&Date.now()-x.time<6*3600e3)return x.data}catch{}return null}
 function cacheSet(k,data){try{localStorage.setItem('anipick-cache-'+k,JSON.stringify({time:Date.now(),data}))}catch{}}
