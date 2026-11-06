@@ -8,7 +8,7 @@
 const gundamIds = ['9isbRbLD2GE', 'oLt-HsDa4yc', 'cRJMt9h-S9A', '7g0x6YeRFzs', '4QGubWs8zRA', 'mxgm2VxpGds', 'KY75kmnHp1I', 'SG7xRduIzGE', 'dEHKf9RLyYw', 'V1mSPIKwnpw', 'OlK4Cl6Og6Y', 'X2jNYdHCkEI', 'bjm8Fx1fkZ8', 'RveC7fPRX18', '15dfvJO6koY', 'k99rDwvXmXM', 'PM1h-keZk4E', '4iuw5pRPUWw', 'D1uteeMC9As', 'pNYHgrbCHag', 'tgXFTJZxoLA', 'tn967iE1pn8'];
 const shows = {
   'gundam-uc-re0096-free': { title:'기동전사 건담 UC RE:0096', sub:'機動戦士ガンダムユニコーン RE:0096 · 2016 · SF / 메카 / 액션', ids:gundamIds, official:true },
-  'dooly-episode-1': { title:'아기공룡 둘리', sub:'1화 · 아기공룡 둘리 등장 · 영상 제공 권한 미확인', ids:['s7HZxZ7phOI'], official:false }
+  'dooly-episode-1': { title:'아기공룡 둘리', sub:'1987 · 가족 / 코미디 / 모험', ids:['s7HZxZ7phOI', 'rXlWqIQ7Yus', 'uSyxGGk3R-s', 'zFzCBzaDXo0', '7iEcCXK4w1s', 'ZsopBQbmCek', 'M6XnFwX-iu0', 'RLZd6T2tSj4', 'jRRShWIbBg0', '8czlZ4lWI9U', 'f6zRhCupi2E', 'aUneD6JW8A8', 'vZtx4lhFycM', 'aUrwRAFRFv8', '-aMmFhG8LYM', 'YojGUhRrDBc', 'A2L4F2rGgAo', 'hz7uq-lwKsc', 'apb1t_83eEg', 'BaPtEzLc0kk', 'NClf4U39tAI', 'wMwk9qnN28w', 'PB6DtbBcp7g', 'aAd6zrcVn0M', 'LR3sHUyrkUs', 'y3LEJrzuYTo'], official:false }
 };
 const params = new URLSearchParams(location.search);
 const anime = params.get('anime') || 'gundam-uc-re0096-free';
@@ -23,13 +23,13 @@ if (!validEpisode) {
 } else {
   document.querySelector('.title').textContent = show.title;
   document.querySelector('.sub').textContent = show.sub;
-  document.querySelector('.eyebrow').textContent = show.official ? 'OFFICIAL FREE EPISODE · YOUTUBE' : 'YOUTUBE EMBED TEST · RIGHTS UNVERIFIED';
+  document.querySelector('.eyebrow').textContent = 'EPISODES · YOUTUBE';
   document.querySelector('.side h2 small').textContent = '(총 '+show.ids.length+'화)';
   const videoId = show.ids[episodeNumber - 1];
   const player = document.getElementById('player');
   player.src = 'https://www.youtube-nocookie.com/embed/' + videoId;
   player.title = show.title + ' ' + episodeNumber + '화';
-  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · ' + (show.official ? '공식 무료 영상' : '재생 테스트');
+  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · 영상 보기';
   document.getElementById('youtubeLink').href = 'https://www.youtube.com/watch?v=' + videoId;
   document.title = episodeNumber + '화 | ' + show.title + ' | AniPick';
   const route = number => '/watch.html?anime=' + encodeURIComponent(anime) + '&episode=' + number;
@@ -47,7 +47,7 @@ if (!validEpisode) {
     link.href = route(number);
     if (number === episodeNumber) link.setAttribute('aria-current', 'page');
     const label = document.createElement('strong');
-    label.textContent = (number === episodeNumber ? '▶ ' : '') + number + '화 · ' + (show.official ? '공식 무료 영상' : '재생 테스트');
+    label.textContent = (number === episodeNumber ? '▶ ' : '') + number + '화 · 영상 보기';
     link.appendChild(label);
     if (number === episodeNumber) {
       const small = document.createElement('small');
