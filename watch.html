@@ -5,40 +5,49 @@
 </style></head><body><header class="top"><div class="shell topinner"><a class="brand" href="/">Ani<b>Pick</b> ✦</a><a class="back" href="/">← 전체 작품으로</a></div></header>
 <main class="shell main"><div class="eyebrow">OFFICIAL FREE EPISODE · YOUTUBE</div><h1 class="title">기동전사 건담 UC RE:0096</h1><p class="sub">機動戦士ガンダムユニコーン RE:0096 · 2016 · SF / 메카 / 액션</p><div class="error" id="error" role="alert">등록되지 않은 에피소드입니다. <a href="/">홈페이지로 돌아가기</a></div><div class="layout" id="layout"><section class="playerBox"><iframe id="player" class="frame" title="기동전사 건담 UC RE:0096 1화" src="https://www.youtube-nocookie.com/embed/9isbRbLD2GE" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe><div class="playerInfo"><h2 id="episodeTitle">1화 · 공식 무료 영상</h2><div class="episodeNav" aria-label="에피소드 이동"><a class="navBtn disabled" id="prevEpisode" href="#" aria-disabled="true">← 이전 화</a><span class="navCount" id="episodeCount">1화 / 22화</span><a class="navBtn" id="nextEpisode" href="/watch.html?anime=gundam-uc-re0096-free&amp;episode=2">다음 화 →</a></div><p style="margin-top:16px">영상은 유튜브 삽입 플레이어로 제공됩니다. 공개 기간, 지역 및 외부 사이트 재생 허용 여부는 영상 제공자의 정책에 따라 변경될 수 있습니다.</p><p class="notice">재생이 안 된다면 <a id="youtubeLink" href="https://www.youtube.com/watch?v=9isbRbLD2GE" target="_blank" rel="noopener noreferrer">유튜브에서 시청하기</a></p></div></section><aside class="side"><h2>📺 에피소드 목록 <small style="font-size:12px;color:#aab0c8">(총 22화)</small></h2><nav class="episodeList" id="episodeList" aria-label="에피소드 선택"></nav><p class="notice">제공자의 공개 설정에 따라 일부 회차는 재생되지 않을 수 있습니다.</p></aside></div></main><footer class="footer"><div class="shell">AniPick ✦ · 영상 저작권은 원 권리자에게 있으며, AniPick은 유튜브 공식 플레이어를 사용합니다.</div></footer><script>
 'use strict';
-const videoIds = ['9isbRbLD2GE', 'oLt-HsDa4yc', 'cRJMt9h-S9A', '7g0x6YeRFzs', '4QGubWs8zRA', 'mxgm2VxpGds', 'KY75kmnHp1I', 'SG7xRduIzGE', 'dEHKf9RLyYw', 'V1mSPIKwnpw', 'OlK4Cl6Og6Y', 'X2jNYdHCkEI', 'bjm8Fx1fkZ8', 'RveC7fPRX18', '15dfvJO6koY', 'k99rDwvXmXM', 'PM1h-keZk4E', '4iuw5pRPUWw', 'D1uteeMC9As', 'pNYHgrbCHag', 'tgXFTJZxoLA', 'tn967iE1pn8'];
+const gundamIds = ['9isbRbLD2GE', 'oLt-HsDa4yc', 'cRJMt9h-S9A', '7g0x6YeRFzs', '4QGubWs8zRA', 'mxgm2VxpGds', 'KY75kmnHp1I', 'SG7xRduIzGE', 'dEHKf9RLyYw', 'V1mSPIKwnpw', 'OlK4Cl6Og6Y', 'X2jNYdHCkEI', 'bjm8Fx1fkZ8', 'RveC7fPRX18', '15dfvJO6koY', 'k99rDwvXmXM', 'PM1h-keZk4E', '4iuw5pRPUWw', 'D1uteeMC9As', 'pNYHgrbCHag', 'tgXFTJZxoLA', 'tn967iE1pn8'];
+const shows = {
+  'gundam-uc-re0096-free': { title:'기동전사 건담 UC RE:0096', sub:'機動戦士ガンダムユニコーン RE:0096 · 2016 · SF / 메카 / 액션', ids:gundamIds, official:true },
+  'dooly-episode-1': { title:'아기공룡 둘리', sub:'1화 · 아기공룡 둘리 등장 · 영상 제공 권한 미확인', ids:['s7HZxZ7phOI'], official:false }
+};
 const params = new URLSearchParams(location.search);
-const anime = params.get('anime');
+const anime = params.get('anime') || 'gundam-uc-re0096-free';
 const episodeParam = params.get('episode') || '1';
+const show = shows[anime];
 const episodeNumber = Number(episodeParam);
-const validEpisode = /^(?:[1-9]|1[0-9]|2[0-2])$/.test(episodeParam);
-if ((anime && anime !== 'gundam-uc-re0096-free') || !validEpisode || !Number.isInteger(episodeNumber)) {
+const validEpisode = /^(?:[1-9][0-9]*)$/.test(episodeParam) && Number.isSafeInteger(episodeNumber) && show && episodeNumber <= show.ids.length;
+if (!validEpisode) {
   document.getElementById('layout').hidden = true;
   document.getElementById('error').style.display = 'block';
   document.getElementById('player').removeAttribute('src');
 } else {
-  const videoId = videoIds[episodeNumber - 1];
-  document.getElementById('player').src = 'https://www.youtube-nocookie.com/embed/' + videoId;
-  document.getElementById('player').title = '기동전사 건담 UC RE:0096 ' + episodeNumber + '화';
-  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · 공식 무료 영상';
+  document.querySelector('.title').textContent = show.title;
+  document.querySelector('.sub').textContent = show.sub;
+  document.querySelector('.eyebrow').textContent = show.official ? 'OFFICIAL FREE EPISODE · YOUTUBE' : 'YOUTUBE EMBED TEST · RIGHTS UNVERIFIED';
+  document.querySelector('.side h2 small').textContent = '(총 '+show.ids.length+'화)';
+  const videoId = show.ids[episodeNumber - 1];
+  const player = document.getElementById('player');
+  player.src = 'https://www.youtube-nocookie.com/embed/' + videoId;
+  player.title = show.title + ' ' + episodeNumber + '화';
+  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · ' + (show.official ? '공식 무료 영상' : '재생 테스트');
   document.getElementById('youtubeLink').href = 'https://www.youtube.com/watch?v=' + videoId;
-  document.title = episodeNumber + '화 | 기동전사 건담 UC RE:0096 | AniPick';
-  const route = number => '/watch.html?anime=gundam-uc-re0096-free&episode=' + number;
+  document.title = episodeNumber + '화 | ' + show.title + ' | AniPick';
+  const route = number => '/watch.html?anime=' + encodeURIComponent(anime) + '&episode=' + number;
   const prev = document.getElementById('prevEpisode');
   const next = document.getElementById('nextEpisode');
-  const count = document.getElementById('episodeCount');
-  count.textContent = episodeNumber + '화 / ' + videoIds.length + '화';
+  document.getElementById('episodeCount').textContent = episodeNumber + '화 / ' + show.ids.length + '화';
   if (episodeNumber > 1) { prev.href = route(episodeNumber - 1); prev.classList.remove('disabled'); prev.removeAttribute('aria-disabled'); }
-  if (episodeNumber < videoIds.length) { next.href = route(episodeNumber + 1); }
+  if (episodeNumber < show.ids.length) { next.href = route(episodeNumber + 1); }
   else { next.removeAttribute('href'); next.classList.add('disabled'); next.setAttribute('aria-disabled', 'true'); }
   const list = document.getElementById('episodeList');
-  videoIds.forEach((id, index) => {
+  show.ids.forEach((id, index) => {
     const number = index + 1;
     const link = document.createElement('a');
     link.className = 'episode' + (number === episodeNumber ? ' active' : '');
-    link.href = '/watch.html?anime=gundam-uc-re0096-free&episode=' + number;
+    link.href = route(number);
     if (number === episodeNumber) link.setAttribute('aria-current', 'page');
     const label = document.createElement('strong');
-    label.textContent = (number === episodeNumber ? '▶ ' : '') + number + '화 · 공식 무료 영상';
+    label.textContent = (number === episodeNumber ? '▶ ' : '') + number + '화 · ' + (show.official ? '공식 무료 영상' : '재생 테스트');
     link.appendChild(label);
     if (number === episodeNumber) {
       const small = document.createElement('small');
@@ -47,7 +56,7 @@ if ((anime && anime !== 'gundam-uc-re0096-free') || !validEpisode || !Number.isI
     }
     list.appendChild(link);
   });
-  // 브라우저가 이전 스크롤 위치를 복원하더라도 처음에는 목록 상단부터 보여줍니다.
   list.scrollTop = 0;
 }
+
 </script></body></html>
