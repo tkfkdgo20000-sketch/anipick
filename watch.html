@@ -7,7 +7,9 @@
 'use strict';
 const gundamIds = ['9isbRbLD2GE', 'oLt-HsDa4yc', 'cRJMt9h-S9A', '7g0x6YeRFzs', '4QGubWs8zRA', 'mxgm2VxpGds', 'KY75kmnHp1I', 'SG7xRduIzGE', 'dEHKf9RLyYw', 'V1mSPIKwnpw', 'OlK4Cl6Og6Y', 'X2jNYdHCkEI', 'bjm8Fx1fkZ8', 'RveC7fPRX18', '15dfvJO6koY', 'k99rDwvXmXM', 'PM1h-keZk4E', '4iuw5pRPUWw', 'D1uteeMC9As', 'pNYHgrbCHag', 'tgXFTJZxoLA', 'tn967iE1pn8'];
 const baechuIds = ['e076MER29Wo', 'B81qiGSGquM', '4NMuKd87po4', 'YsTpkfw70AI', '6cFQDRO8yc8', 'pInwwuDdwec', 'eaOmc8IMGr4', '85yn50l32Ww', 'xZIvsIogjSk', 'iO2aWX3mu7M', 'neILqmtIXtM', 'rIHfzFWkA2w', '2OWB82d-iQU'];
+const tinypingIds = ['mAsiA_sld3A', 'QHqtPLZbgio', 'JFq1e86-Jtw', '_IQDYCvdDBM', 'ssD1sxMatXo', 'Zkvw-Qa5RtE', 'z11QptPzMM4', 'stwMPiIO_yw', '0Ky38_lnuFs', 'nO16PzlzPHk', '37OtBOn55U0', 'LruDE54ANiI', 'eCkFvGJYGkk', 'xVJQcgssg_U', '82ryV9CzZbg', 'KvE8tgG50BE', 'JODHq0WPEhM', 'WLHsOWaFQY0', '1QrXentSl1c', 'hBHTDejucuE', 'N7NIeskncMY', 'oTBdec5Lyms', 'xe60fTXg6mk', 'xurB-2BkFJs', 'U-P9yRx9sWU', '7w3aS8HH6MA'];
 const shows = {
+  'shootingstar-tinyping-episode-1': { title:'슈팅스타 캐치! 티니핑', sub:'2024 · 가족 / 판타지 / 애니메이션', ids:tinypingIds, official:false },
   'baechu-mudo-episode-1': { title:'배추도사 무도사의 옛날옛적에', sub:'전래동화 / 가족 / 애니메이션', ids:baechuIds, official:false },
   'gundam-uc-re0096-free': { title:'기동전사 건담 UC RE:0096', sub:'機動戦士ガンダムユニコーン RE:0096 · 2016 · SF / 메카 / 액션', ids:gundamIds, official:true },
   'dooly-episode-1': { title:'아기공룡 둘리', sub:'1987 · 가족 / 코미디 / 모험', ids:['s7HZxZ7phOI', 'rXlWqIQ7Yus', 'uSyxGGk3R-s', 'zFzCBzaDXo0', '7iEcCXK4w1s', 'ZsopBQbmCek', 'M6XnFwX-iu0', 'RLZd6T2tSj4', 'jRRShWIbBg0', '8czlZ4lWI9U', 'f6zRhCupi2E', 'aUneD6JW8A8', 'vZtx4lhFycM', 'aUrwRAFRFv8', '-aMmFhG8LYM', 'YojGUhRrDBc', 'A2L4F2rGgAo', 'hz7uq-lwKsc', 'apb1t_83eEg', 'BaPtEzLc0kk', 'NClf4U39tAI', 'wMwk9qnN28w', 'PB6DtbBcp7g', 'aAd6zrcVn0M', 'LR3sHUyrkUs', 'y3LEJrzuYTo'], official:false }
@@ -31,7 +33,7 @@ if (!validEpisode) {
   const player = document.getElementById('player');
   player.src = 'https://www.youtube-nocookie.com/embed/' + videoId;
   player.title = show.title + ' ' + episodeNumber + '화';
-  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · 영상 보기';
+  document.getElementById('episodeTitle').textContent = episodeNumber + '화 · ' + (anime === 'shootingstar-tinyping-episode-1' && episodeNumber === 1 ? '별을 타고 온 소녀' : '영상 보기');
   document.getElementById('youtubeLink').href = 'https://www.youtube.com/watch?v=' + videoId;
   document.title = episodeNumber + '화 | ' + show.title + ' | AniPick';
   const route = number => '/watch.html?anime=' + encodeURIComponent(anime) + '&episode=' + number;
